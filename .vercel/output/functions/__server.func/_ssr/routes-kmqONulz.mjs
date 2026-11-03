@@ -1,9 +1,9 @@
 import { r as __toESM } from "../_runtime.mjs";
-import { a as MIRAS_LAYERS, c as PROFILE, d as RESTORATION_STAGES, i as MIRAS_FEATURES, l as PROJECTS, n as CIRO_STAGES, o as MORE_WORK, r as EXPERIENCE, s as NAV, t as CAPABILITIES, u as PROOF } from "./site-Os0M_2SH.mjs";
+import { a as MIRAS_LAYERS, c as PROFILE, d as RESTORATION_STAGES, i as MIRAS_FEATURES, l as PROJECTS, n as CIRO_STAGES, o as MORE_WORK, r as EXPERIENCE, s as NAV, t as CAPABILITIES, u as PROOF } from "./site-BLvE3ZXs.mjs";
 import { a as require_jsx_runtime, o as require_react } from "../_libs/@radix-ui/react-collection+[...].mjs";
 import { n as ArrowUpRight, t as Check } from "../_libs/lucide-react.mjs";
 import { i as Trigger, n as List, r as Root2, t as Content } from "../_libs/radix-ui__react-tabs.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-BkN--eIC.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-kmqONulz.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var RAMP = [
@@ -920,7 +920,7 @@ function About() {
 					children: "About"
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "mt-8 space-y-5 text-[1.12rem] measure",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "I like projects where software has to make a call and show its reasoning. In CIRO that’s a response plan with the agent trace behind it. In Spotter it’s one recommended route and a sentence on why." }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "I’m a Computer Science graduate from Air University Islamabad, based in Pakistan and working remotely. I’m looking for my first full-time role in AI/ML or software engineering, and I can start right away." })]
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "I like projects where software has to make a call and show its reasoning. In CIRO that’s a response plan with the agent trace behind it. In the truck routing app it’s one recommended route and a sentence on why." }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "I’m a Computer Science graduate from Air University Islamabad, based in Pakistan and working remotely. I’m looking for my first full-time role in AI/ML or software engineering, and I can start right away." })]
 				})]
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("dl", {
 				className: "border-t border-ink lg:col-span-7 lg:col-start-6",
@@ -1030,7 +1030,7 @@ function Contact() {
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 					className: "label mt-12 text-[0.9rem] text-ground/70",
-					children: "Built with TanStack Start, Tailwind and one canvas. Map ramp borrowed from Spotter."
+					children: "Built with TanStack Start, Tailwind and one canvas. Risk colours borrowed from my truck routing project."
 				})
 			]
 		})]
@@ -1041,14 +1041,14 @@ var SPOTTER_VIEWS = [
 		id: "routes",
 		tab: "Compare routes",
 		src: "/projects/spotter-route-comparison.jpg",
-		alt: "Spotter showing a recommended green route from Chicago to Denver with grey alternatives, and a risk summary in the sidebar",
+		alt: "The truck routing app showing a recommended green route from Chicago to Denver with grey alternatives, and a risk summary in the sidebar",
 		caption: "Chicago to Denver with a 45,000 lb load. The recommended route is green; the alternatives stay grey."
 	},
 	{
 		id: "heatmap",
 		tab: "Weather over time",
 		src: "/projects/spotter-heatmap-storms.jpg",
-		alt: "Spotter showing a route from Los Angeles to Dallas with the weather heatmap and time slider moved 13 hours after departure",
+		alt: "The truck routing app showing a route from Los Angeles to Dallas with the weather heatmap and time slider moved 13 hours after departure",
 		caption: "Los Angeles to Dallas. The slider moves through the forecast hour by hour after departure."
 	},
 	{
@@ -1059,11 +1059,11 @@ var SPOTTER_VIEWS = [
 		caption: "Click a checkpoint to see wind, rain and snow for the hour the truck gets there."
 	}
 ];
-function SpotterViewer() {
+function RoutingViewer() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Root2, {
 		defaultValue: "routes",
 		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(List, {
-			"aria-label": "Spotter screenshots",
+			"aria-label": "Truck routing screenshots",
 			className: "mb-3 flex flex-wrap gap-x-6 gap-y-1",
 			children: SPOTTER_VIEWS.map((v) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Trigger, {
 				value: v.id,
@@ -1247,7 +1247,7 @@ function LayerDiagram() {
 }
 function Visual({ kind }) {
 	switch (kind) {
-		case "spotter": return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SpotterViewer, {});
+		case "routing": return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(RoutingViewer, {});
 		case "pipeline-ciro": return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(PipelineDiagram, {
 			stages: CIRO_STAGES,
 			label: "The five agents, in the order a report passes through them"

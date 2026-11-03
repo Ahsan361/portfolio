@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 import * as Tabs from "@radix-ui/react-tabs";
 import { MIRAS_FEATURES, MIRAS_LAYERS, type Stage } from "@/data/site";
 
-/* ---------- Spotter: the real app, three views ---------- */
+/* ---------- Weather-aware truck routing: the real app, three views ---------- */
 
 const SPOTTER_VIEWS = [
   {
     id: "routes",
     tab: "Compare routes",
     src: "/projects/spotter-route-comparison.jpg",
-    alt: "Spotter showing a recommended green route from Chicago to Denver with grey alternatives, and a risk summary in the sidebar",
+    alt: "The truck routing app showing a recommended green route from Chicago to Denver with grey alternatives, and a risk summary in the sidebar",
     caption:
       "Chicago to Denver with a 45,000 lb load. The recommended route is green; the alternatives stay grey.",
   },
@@ -17,7 +17,7 @@ const SPOTTER_VIEWS = [
     id: "heatmap",
     tab: "Weather over time",
     src: "/projects/spotter-heatmap-storms.jpg",
-    alt: "Spotter showing a route from Los Angeles to Dallas with the weather heatmap and time slider moved 13 hours after departure",
+    alt: "The truck routing app showing a route from Los Angeles to Dallas with the weather heatmap and time slider moved 13 hours after departure",
     caption:
       "Los Angeles to Dallas. The slider moves through the forecast hour by hour after departure.",
   },
@@ -30,10 +30,13 @@ const SPOTTER_VIEWS = [
   },
 ];
 
-export function SpotterViewer() {
+export function RoutingViewer() {
   return (
     <Tabs.Root defaultValue="routes">
-      <Tabs.List aria-label="Spotter screenshots" className="mb-3 flex flex-wrap gap-x-6 gap-y-1">
+      <Tabs.List
+        aria-label="Truck routing screenshots"
+        className="mb-3 flex flex-wrap gap-x-6 gap-y-1"
+      >
         {SPOTTER_VIEWS.map((v) => (
           <Tabs.Trigger
             key={v.id}

@@ -1,9 +1,9 @@
-import { c as PROFILE } from "./site-Os0M_2SH.mjs";
+import { c as PROFILE } from "./site-BLvE3ZXs.mjs";
 import { a as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
 import { c as HeadContent, d as Outlet, f as lazyRouteComponent, g as useRouter, h as Link, m as createRootRouteWithContext, p as createFileRoute, s as Scripts, u as createRouter } from "../_libs/@tanstack/react-router+[...].mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
 import { t as QueryClientProvider } from "../_libs/tanstack__react-query.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-ud3IIfhh.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-DcoaOo00.js
 var import_jsx_runtime = require_jsx_runtime();
 var styles_default = "/assets/styles-Piru_RNx.css";
 function NotFoundComponent() {
@@ -110,7 +110,7 @@ function RootComponent() {
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {})
 	});
 }
-var $$splitComponentImporter = () => import("./routes-BkN--eIC.mjs");
+var $$splitComponentImporter = () => import("./routes-kmqONulz.mjs");
 var TITLE = "Muhammad Ahsan Aftab | AI/ML and Full-Stack Engineer";
 var DESCRIPTION = "AI/ML and full-stack engineer building multi-agent crisis response, weather-aware routing and image restoration systems. Based in Pakistan, available for remote roles.";
 var rootRouteChildren = { IndexRoute: createFileRoute("/")({

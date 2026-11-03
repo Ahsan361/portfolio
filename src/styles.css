@@ -32,7 +32,7 @@
   --color-input: var(--rule);
   --color-ring: var(--route);
 
-  /* Portfolio palette: chart paper, ink, one route colour, and the risk ramp from Spotter */
+  /* Portfolio palette: chart paper, ink, one route colour, and the risk ramp from the truck routing app */
   --color-ground: var(--ground);
   --color-panel: var(--panel);
   --color-ink: var(--ink);

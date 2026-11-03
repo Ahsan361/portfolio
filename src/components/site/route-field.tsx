@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 
 /*
  * A contour map with weather cells on it and a route that avoids them.
- * It is the same idea as Spotter: the pointer is a storm, and the route replans around it.
+ * It is the same idea as my weather-aware truck routing app: the pointer is a storm, and the route replans around it.
  * "scene" draws the full thing; "contours" draws only the terrain, for use on dark grounds.
  */
 

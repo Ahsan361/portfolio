@@ -39,7 +39,7 @@ export interface Stage {
   makes: string;
 }
 
-export type VisualKind = "spotter" | "pipeline-ciro" | "layers-miras" | "pipeline-restoration";
+export type VisualKind = "routing" | "pipeline-ciro" | "layers-miras" | "pipeline-restoration";
 
 export interface Project {
   slug: string;
@@ -56,12 +56,12 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
-    slug: "spotter",
+    slug: "truck-routing",
     meta: "Solo project, live demo",
-    name: "Spotter",
-    kicker: "Weather-aware truck routing",
+    name: "Weather-Aware Truck Routing",
+    kicker: "Picking the safest route for a truck from the forecast",
     summary:
-      "Pick a start, a destination, a departure time and a load weight. Spotter finds up to three routes, works out when the truck reaches each checkpoint, checks the forecast for that place at that hour, and recommends the safest route with a one-sentence reason.",
+      "Pick a start, a destination, a departure time and a load weight. The app finds up to three routes, works out when the truck reaches each checkpoint, checks the forecast for that place at that hour, and recommends the safest route with a one-sentence reason.",
     points: [
       "Forecasts are looked up for the hour the truck actually arrives, not the hour it leaves. A 6 am departure from Chicago doesn't care what Nebraska's weather is at 6 am.",
       "Every checkpoint is scored from Low to No Travel, taking load weight into account, and shown on a map with a time slider and a heatmap of bad weather.",
@@ -81,7 +81,7 @@ export const PROJECTS: Project[] = [
       { label: "Live demo", href: "https://weather-aware-truck-routing-alpha-three.vercel.app" },
       { label: "Source", href: "https://github.com/Ahsan361/Weather-Aware-Truck-Routing" },
     ],
-    visual: "spotter",
+    visual: "routing",
   },
   {
     slug: "ciro",

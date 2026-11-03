@@ -89,8 +89,8 @@ export function About() {
           <div className="mt-8 space-y-5 text-[1.12rem] measure">
             <p>
               I like projects where software has to make a call and show its reasoning. In CIRO
-              that&rsquo;s a response plan with the agent trace behind it. In Spotter it&rsquo;s one
-              recommended route and a sentence on why.
+              that&rsquo;s a response plan with the agent trace behind it. In the truck routing app
+              it&rsquo;s one recommended route and a sentence on why.
             </p>
             <p>
               I&rsquo;m a Computer Science graduate from Air University Islamabad, based in Pakistan
@@ -203,7 +203,8 @@ export function Contact() {
         </ul>
 
         <p className="label mt-12 text-[0.9rem] text-ground/70">
-          Built with TanStack Start, Tailwind and one canvas. Map ramp borrowed from Spotter.
+          Built with TanStack Start, Tailwind and one canvas. Risk colours borrowed from my truck
+          routing project.
         </p>
       </div>
     </section>

@@ -1,12 +1,12 @@
 import { ArrowUpRight } from "lucide-react";
 import { CIRO_STAGES, MORE_WORK, PROJECTS, RESTORATION_STAGES, type Project } from "@/data/site";
 import { RevealHeading } from "./reveal";
-import { LayerDiagram, PipelineDiagram, SpotterViewer } from "./visuals";
+import { LayerDiagram, PipelineDiagram, RoutingViewer } from "./visuals";
 
 function Visual({ kind }: { kind: Project["visual"] }) {
   switch (kind) {
-    case "spotter":
-      return <SpotterViewer />;
+    case "routing":
+      return <RoutingViewer />;
     case "pipeline-ciro":
       return (
         <PipelineDiagram
