@@ -1,6 +1,8 @@
 import { useState } from "react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Check } from "lucide-react";
 import { CAPABILITIES, EXPERIENCE, PROFILE, PROOF } from "@/data/site";
+import { RevealHeading } from "./reveal";
+import { useReveal } from "./use-reveal";
 import { RouteField } from "./route-field";
 
 /* ---------- Proof ---------- */
@@ -26,6 +28,9 @@ export function Proof() {
 /* ---------- Experience ---------- */
 
 export function Experience() {
+  const listRef = useReveal<HTMLOListElement>();
+  let marker = 0;
+
   return (
     <section
       id="experience"
@@ -33,10 +38,10 @@ export function Experience() {
       className="px-5 pb-8 pt-24 sm:px-8 lg:px-12 2xl:px-16 lg:pt-32"
     >
       <div className="mx-auto max-w-[104rem]">
-        <h2 id="experience-title" className="heading text-[clamp(2.4rem,6vw,4.75rem)]">
+        <RevealHeading id="experience-title" className="heading text-[clamp(2.4rem,6vw,4.75rem)]">
           Experience
-        </h2>
-        <ol className="mt-12 border-t border-ink lg:mt-16">
+        </RevealHeading>
+        <ol ref={listRef} className="reveal-markers mt-12 border-t border-ink lg:mt-16">
           {EXPERIENCE.map((r) => (
             <li key={r.company} className="grid gap-x-10 gap-y-4 border-b py-9 lg:grid-cols-12">
               <div className="lg:col-span-4">
@@ -52,7 +57,8 @@ export function Experience() {
                   <li key={p} className="relative pl-6 measure">
                     <span
                       aria-hidden="true"
-                      className="absolute left-0 top-[0.7em] h-2 w-2 rounded-[1px] bg-route"
+                      className="marker absolute left-0 top-[0.7em] h-2 w-2 rounded-[1px] bg-route"
+                      style={{ "--i": marker++ } as React.CSSProperties}
                     />
                     {p}
                   </li>
@@ -77,9 +83,9 @@ export function About() {
     >
       <div className="mx-auto grid max-w-[104rem] gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-5">
-          <h2 id="about-title" className="heading text-[clamp(2.4rem,6vw,4.75rem)]">
+          <RevealHeading id="about-title" className="heading text-[clamp(2.4rem,6vw,4.75rem)]">
             About
-          </h2>
+          </RevealHeading>
           <div className="mt-8 space-y-5 text-[1.12rem] measure">
             <p>
               I like projects where software has to make a call and show its reasoning. In CIRO
@@ -133,9 +139,12 @@ export function Contact() {
     >
       <RouteField mode="contours" className="absolute inset-0 -z-10" />
       <div className="mx-auto max-w-[104rem]">
-        <h2 id="contact-title" className="display max-w-[16ch] text-[clamp(2.4rem,7.6vw,6.5rem)]">
+        <RevealHeading
+          id="contact-title"
+          className="display max-w-[16ch] text-[clamp(2.4rem,7.6vw,6.5rem)]"
+        >
           Hiring for a remote role?
-        </h2>
+        </RevealHeading>
         <p className="mt-8 max-w-[44ch] text-[1.3rem] leading-snug text-ground/90">
           I&rsquo;m looking for a junior AI/ML or software role and can start right away. Email is
           the fastest way to reach me.
@@ -151,11 +160,16 @@ export function Contact() {
           <button
             type="button"
             onClick={copyEmail}
-            className="label inline-flex h-11 items-center rounded-sm border border-ground/50 px-4 text-[0.95rem] transition-colors hover:bg-ground hover:text-ink"
+            className={`label inline-flex h-11 min-w-[9.5rem] items-center justify-center gap-2 rounded-sm border px-4 text-[0.95rem] transition-colors duration-200 ${
+              copied
+                ? "border-route-soft bg-route-soft text-ink"
+                : "border-ground/50 hover:bg-ground hover:text-ink"
+            }`}
           >
-            Copy address
+            {copied && <Check aria-hidden="true" className="h-4 w-4" />}
+            {copied ? "Copied" : "Copy address"}
           </button>
-          <span role="status" className="label text-[0.95rem] text-route-soft">
+          <span role="status" className="sr-only">
             {copied ? "Copied to clipboard" : ""}
           </span>
         </div>

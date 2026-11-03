@@ -1,9 +1,9 @@
 import { r as __toESM } from "../_runtime.mjs";
-import { a as MIRAS_LAYERS, c as PROFILE, d as RESTORATION_STAGES, i as MIRAS_FEATURES, l as PROJECTS, n as CIRO_STAGES, o as MORE_WORK, r as EXPERIENCE, s as NAV, t as CAPABILITIES, u as PROOF } from "./site-HDdlMug2.mjs";
+import { a as MIRAS_LAYERS, c as PROFILE, d as RESTORATION_STAGES, i as MIRAS_FEATURES, l as PROJECTS, n as CIRO_STAGES, o as MORE_WORK, r as EXPERIENCE, s as NAV, t as CAPABILITIES, u as PROOF } from "./site-Os0M_2SH.mjs";
 import { a as require_jsx_runtime, o as require_react } from "../_libs/@radix-ui/react-collection+[...].mjs";
-import { t as ArrowUpRight } from "../_libs/lucide-react.mjs";
+import { n as ArrowUpRight, t as Check } from "../_libs/lucide-react.mjs";
 import { i as Trigger, n as List, r as Root2, t as Content } from "../_libs/radix-ui__react-tabs.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-ChDB0T_y.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-BkN--eIC.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var RAMP = [
@@ -806,6 +806,33 @@ function Nav() {
 		})]
 	});
 }
+function useReveal() {
+	const ref = (0, import_react.useRef)(null);
+	(0, import_react.useEffect)(() => {
+		const el = ref.current;
+		if (!el) return;
+		if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+		const rect = el.getBoundingClientRect();
+		if (rect.top < window.innerHeight * .9 && rect.bottom > 0) return;
+		el.dataset.reveal = "armed";
+		const io = new IntersectionObserver(([entry]) => {
+			if (!entry.isIntersecting) return;
+			el.dataset.reveal = "in";
+			io.disconnect();
+		}, { rootMargin: "0px 0px -12% 0px" });
+		io.observe(el);
+		return () => io.disconnect();
+	}, []);
+	return ref;
+}
+function RevealHeading({ id, className, children }) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+		id,
+		ref: useReveal(),
+		className: `reveal-mask ${className}`,
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children })
+	});
+}
 function Proof() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
 		"aria-label": "Highlights",
@@ -826,18 +853,21 @@ function Proof() {
 	});
 }
 function Experience() {
+	const listRef = useReveal();
+	let marker = 0;
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
 		id: "experience",
 		"aria-labelledby": "experience-title",
 		className: "px-5 pb-8 pt-24 sm:px-8 lg:px-12 2xl:px-16 lg:pt-32",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "mx-auto max-w-[104rem]",
-			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(RevealHeading, {
 				id: "experience-title",
 				className: "heading text-[clamp(2.4rem,6vw,4.75rem)]",
 				children: "Experience"
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ol", {
-				className: "mt-12 border-t border-ink lg:mt-16",
+				ref: listRef,
+				className: "reveal-markers mt-12 border-t border-ink lg:mt-16",
 				children: EXPERIENCE.map((r) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
 					className: "grid gap-x-10 gap-y-4 border-b py-9 lg:grid-cols-12",
 					children: [
@@ -864,7 +894,8 @@ function Experience() {
 								className: "relative pl-6 measure",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 									"aria-hidden": "true",
-									className: "absolute left-0 top-[0.7em] h-2 w-2 rounded-[1px] bg-route"
+									className: "marker absolute left-0 top-[0.7em] h-2 w-2 rounded-[1px] bg-route",
+									style: { "--i": marker++ }
 								}), p]
 							}, p))
 						})
@@ -883,7 +914,7 @@ function About() {
 			className: "mx-auto grid max-w-[104rem] gap-12 lg:grid-cols-12 lg:gap-16",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "lg:col-span-5",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(RevealHeading, {
 					id: "about-title",
 					className: "heading text-[clamp(2.4rem,6vw,4.75rem)]",
 					children: "About"
@@ -928,7 +959,7 @@ function Contact() {
 		}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "mx-auto max-w-[104rem]",
 			children: [
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(RevealHeading, {
 					id: "contact-title",
 					className: "display max-w-[16ch] text-[clamp(2.4rem,7.6vw,6.5rem)]",
 					children: "Hiring for a remote role?"
@@ -945,15 +976,18 @@ function Contact() {
 							className: "heading text-[clamp(1.3rem,3.4vw,2.2rem)] underline decoration-route-soft decoration-2 underline-offset-[0.2em] transition-colors hover:text-route-soft",
 							children: PROFILE.email
 						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
 							type: "button",
 							onClick: copyEmail,
-							className: "label inline-flex h-11 items-center rounded-sm border border-ground/50 px-4 text-[0.95rem] transition-colors hover:bg-ground hover:text-ink",
-							children: "Copy address"
+							className: `label inline-flex h-11 min-w-[9.5rem] items-center justify-center gap-2 rounded-sm border px-4 text-[0.95rem] transition-colors duration-200 ${copied ? "border-route-soft bg-route-soft text-ink" : "border-ground/50 hover:bg-ground hover:text-ink"}`,
+							children: [copied && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Check, {
+								"aria-hidden": "true",
+								className: "h-4 w-4"
+							}), copied ? "Copied" : "Copy address"]
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							role: "status",
-							className: "label text-[0.95rem] text-route-soft",
+							className: "sr-only",
 							children: copied ? "Copied to clipboard" : ""
 						})
 					]
@@ -1038,7 +1072,7 @@ function SpotterViewer() {
 			}, v.id))
 		}), SPOTTER_VIEWS.map((v) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Content, {
 			value: v.id,
-			className: "focus-visible:outline-offset-4",
+			className: "animate-in fade-in duration-300 focus-visible:outline-offset-4",
 			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("figure", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "overflow-hidden rounded-md border border-ink/20 bg-panel shadow-[0_1px_0_rgba(14,26,33,0.06),0_18px_40px_-24px_rgba(14,26,33,0.35)]",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
@@ -1102,43 +1136,61 @@ function PipelineDiagram({ stages, label }) {
 				children: stages.map((s, i) => {
 					const reached = i <= active;
 					return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
-						className: `relative border-l-2 pb-1 pl-5 lg:border-l-0 lg:border-t-2 lg:pl-0 lg:pr-3 lg:pt-5 ${reached ? "border-route" : "border-ink/20"}`,
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							"aria-hidden": "true",
-							className: `absolute -left-[0.6875rem] top-0 grid h-5 w-5 place-items-center rounded-full text-[0.7rem] font-bold lg:-top-[0.6875rem] lg:left-0 ${reached ? "bg-route text-ground" : "bg-ground text-slate ring-2 ring-inset ring-ink/25"}`,
-							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-								className: "label",
-								children: i + 1
+						className: "relative pb-1 pl-5 lg:pl-0 lg:pr-3 lg:pt-5",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								"aria-hidden": "true",
+								className: "absolute left-0 top-0 h-full w-0.5 bg-ink/20 lg:h-0.5 lg:w-full"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								"aria-hidden": "true",
+								className: "absolute left-0 top-0 h-full w-0.5 origin-top bg-route transition-transform duration-500 ease-out [transform:scaleY(var(--f))] lg:h-0.5 lg:w-full lg:origin-left lg:[transform:scaleX(var(--f))]",
+								style: { "--f": reached ? 1 : 0 }
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								"aria-hidden": "true",
+								className: `absolute -left-[0.6875rem] top-0 grid h-5 w-5 place-items-center rounded-full text-[0.7rem] font-bold transition-colors duration-300 lg:-top-[0.6875rem] lg:left-0 ${reached ? "bg-route text-ground" : "bg-ground text-slate ring-2 ring-inset ring-ink/25"}`,
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "label",
+									children: i + 1
+								})
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+								type: "button",
+								"aria-pressed": i === active,
+								onClick: () => {
+									setPlaying(false);
+									setActive(i);
+								},
+								className: `heading min-h-11 min-w-0 py-2 text-left text-[1rem] leading-tight transition-colors [font-stretch:88%] [overflow-wrap:anywhere] hover:text-route lg:pt-1 ${i === active ? "text-ink" : "text-slate"}`,
+								children: s.name
 							})
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
-							type: "button",
-							"aria-pressed": i === active,
-							onClick: () => {
-								setPlaying(false);
-								setActive(i);
-							},
-							className: `heading min-h-11 min-w-0 py-2 text-left text-[1rem] leading-tight transition-colors [font-stretch:88%] [overflow-wrap:anywhere] hover:text-route lg:pt-1 ${i === active ? "text-ink" : "text-slate"}`,
-							children: s.name
-						})]
+						]
 					}, s.name);
 				})
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("dl", {
 				className: "mt-6 grid gap-5 border-t pt-6 sm:grid-cols-2",
 				"aria-live": "polite",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("dt", {
-					className: "label text-[0.9rem] text-slate",
-					children: "Reads"
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("dd", {
-					className: "mt-1",
-					children: current.reads
-				})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("dt", {
-					className: "label text-[0.9rem] text-slate",
-					children: "Produces"
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("dd", {
-					className: "mt-1",
-					children: current.makes
-				})] })]
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "animate-in fade-in duration-300",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("dt", {
+						className: "label text-[0.9rem] text-slate",
+						children: "Reads"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("dd", {
+						className: "mt-1",
+						children: current.reads
+					})]
+				}, `${active}-reads`), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "animate-in fade-in duration-300",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("dt", {
+						className: "label text-[0.9rem] text-slate",
+						children: "Produces"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("dd", {
+						className: "mt-1",
+						children: current.makes
+					})]
+				}, `${active}-makes`)]
 			})
 		]
 	});
@@ -1229,6 +1281,30 @@ function ExternalLink({ href, children }) {
 		]
 	});
 }
+function ProjectIndex() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
+		"aria-label": "Projects in this section",
+		className: "mt-12 grid divide-y divide-ink/15 border-t border-ink xl:grid-cols-4 xl:divide-x xl:divide-y-0",
+		children: PROJECTS.map((p) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+			href: `#project-${p.slug}`,
+			className: "group block h-full py-5 xl:px-6 xl:first:pl-0 xl:last:pr-0",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+					className: "heading block text-xl transition-colors group-hover:text-route",
+					children: p.name
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+					className: "label mt-1.5 block text-[0.95rem] text-slate",
+					children: p.kicker
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+					className: "label mt-3 block text-[0.9rem] text-ink",
+					children: p.meta
+				})
+			]
+		}) }, p.slug))
+	});
+}
 function ProjectArticle({ project }) {
 	const titleId = `project-${project.slug}`;
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("article", {
@@ -1294,17 +1370,18 @@ function Work() {
 			children: [
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "max-w-3xl",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(RevealHeading, {
 						id: "work-title",
 						className: "heading text-[clamp(2.4rem,6vw,4.75rem)]",
 						children: "Selected work"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 						className: "mt-5 text-[1.2rem] leading-snug measure",
-						children: "Four projects I’d be happy to walk through in an interview, from the forecast math in Spotter to the deployment work in Miras. Everything on GitHub is linked where the source is public."
+						children: "Four projects across AI systems and full-stack products. Each has a live demo or a deployed API, and the source is linked where it’s public."
 					})]
 				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ProjectIndex, {}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-					className: "mt-14 lg:mt-20",
+					className: "mt-6 lg:mt-10",
 					children: PROJECTS.map((p) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ProjectArticle, { project: p }, p.slug))
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {

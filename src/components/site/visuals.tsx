@@ -45,7 +45,11 @@ export function SpotterViewer() {
         ))}
       </Tabs.List>
       {SPOTTER_VIEWS.map((v) => (
-        <Tabs.Content key={v.id} value={v.id} className="focus-visible:outline-offset-4">
+        <Tabs.Content
+          key={v.id}
+          value={v.id}
+          className="animate-in fade-in duration-300 focus-visible:outline-offset-4"
+        >
           <figure>
             <div className="overflow-hidden rounded-md border border-ink/20 bg-panel shadow-[0_1px_0_rgba(14,26,33,0.06),0_18px_40px_-24px_rgba(14,26,33,0.35)]">
               <img
@@ -118,15 +122,19 @@ export function PipelineDiagram({ stages, label }: { stages: Stage[]; label: str
         {stages.map((s, i) => {
           const reached = i <= active;
           return (
-            <li
-              key={s.name}
-              className={`relative border-l-2 pb-1 pl-5 lg:border-l-0 lg:border-t-2 lg:pl-0 lg:pr-3 lg:pt-5 ${
-                reached ? "border-route" : "border-ink/20"
-              }`}
-            >
+            <li key={s.name} className="relative pb-1 pl-5 lg:pl-0 lg:pr-3 lg:pt-5">
               <span
                 aria-hidden="true"
-                className={`absolute -left-[0.6875rem] top-0 grid h-5 w-5 place-items-center rounded-full text-[0.7rem] font-bold lg:-top-[0.6875rem] lg:left-0 ${
+                className="absolute left-0 top-0 h-full w-0.5 bg-ink/20 lg:h-0.5 lg:w-full"
+              />
+              <span
+                aria-hidden="true"
+                className="absolute left-0 top-0 h-full w-0.5 origin-top bg-route transition-transform duration-500 ease-out [transform:scaleY(var(--f))] lg:h-0.5 lg:w-full lg:origin-left lg:[transform:scaleX(var(--f))]"
+                style={{ "--f": reached ? 1 : 0 } as React.CSSProperties}
+              />
+              <span
+                aria-hidden="true"
+                className={`absolute -left-[0.6875rem] top-0 grid h-5 w-5 place-items-center rounded-full text-[0.7rem] font-bold transition-colors duration-300 lg:-top-[0.6875rem] lg:left-0 ${
                   reached
                     ? "bg-route text-ground"
                     : "bg-ground text-slate ring-2 ring-inset ring-ink/25"
@@ -153,11 +161,11 @@ export function PipelineDiagram({ stages, label }: { stages: Stage[]; label: str
       </ol>
 
       <dl className="mt-6 grid gap-5 border-t pt-6 sm:grid-cols-2" aria-live="polite">
-        <div>
+        <div key={`${active}-reads`} className="animate-in fade-in duration-300">
           <dt className="label text-[0.9rem] text-slate">Reads</dt>
           <dd className="mt-1">{current.reads}</dd>
         </div>
-        <div>
+        <div key={`${active}-makes`} className="animate-in fade-in duration-300">
           <dt className="label text-[0.9rem] text-slate">Produces</dt>
           <dd className="mt-1">{current.makes}</dd>
         </div>

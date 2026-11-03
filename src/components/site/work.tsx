@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { CIRO_STAGES, MORE_WORK, PROJECTS, RESTORATION_STAGES, type Project } from "@/data/site";
+import { RevealHeading } from "./reveal";
 import { LayerDiagram, PipelineDiagram, SpotterViewer } from "./visuals";
 
 function Visual({ kind }: { kind: Project["visual"] }) {
@@ -37,6 +38,30 @@ function ExternalLink({ href, children }: { href: string; children: React.ReactN
       />
       <span className="sr-only">(opens in a new tab)</span>
     </a>
+  );
+}
+
+function ProjectIndex() {
+  return (
+    <ul
+      aria-label="Projects in this section"
+      className="mt-12 grid divide-y divide-ink/15 border-t border-ink xl:grid-cols-4 xl:divide-x xl:divide-y-0"
+    >
+      {PROJECTS.map((p) => (
+        <li key={p.slug}>
+          <a
+            href={`#project-${p.slug}`}
+            className="group block h-full py-5 xl:px-6 xl:first:pl-0 xl:last:pr-0"
+          >
+            <span className="heading block text-xl transition-colors group-hover:text-route">
+              {p.name}
+            </span>
+            <span className="label mt-1.5 block text-[0.95rem] text-slate">{p.kicker}</span>
+            <span className="label mt-3 block text-[0.9rem] text-ink">{p.meta}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
   );
 }
 
@@ -95,17 +120,18 @@ export function Work() {
     >
       <div className="mx-auto max-w-[104rem]">
         <div className="max-w-3xl">
-          <h2 id="work-title" className="heading text-[clamp(2.4rem,6vw,4.75rem)]">
+          <RevealHeading id="work-title" className="heading text-[clamp(2.4rem,6vw,4.75rem)]">
             Selected work
-          </h2>
+          </RevealHeading>
           <p className="mt-5 text-[1.2rem] leading-snug measure">
-            Four projects I&rsquo;d be happy to walk through in an interview, from the forecast math
-            in Spotter to the deployment work in Miras. Everything on GitHub is linked where the
-            source is public.
+            Four projects across AI systems and full-stack products. Each has a live demo or a
+            deployed API, and the source is linked where it&rsquo;s public.
           </p>
         </div>
 
-        <div className="mt-14 lg:mt-20">
+        <ProjectIndex />
+
+        <div className="mt-6 lg:mt-10">
           {PROJECTS.map((p) => (
             <ProjectArticle key={p.slug} project={p} />
           ))}

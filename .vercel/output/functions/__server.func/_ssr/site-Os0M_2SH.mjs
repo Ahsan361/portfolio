@@ -1,4 +1,4 @@
-//#region node_modules/.nitro/vite/services/ssr/assets/site-HDdlMug2.js
+//#region node_modules/.nitro/vite/services/ssr/assets/site-Os0M_2SH.js
 var PROFILE = {
 	name: "Muhammad Ahsan Aftab",
 	email: "ahsanaftab077@gmail.com",
@@ -41,6 +41,7 @@ var PROOF = [
 var PROJECTS = [
 	{
 		slug: "spotter",
+		meta: "Solo project, live demo",
 		name: "Spotter",
 		kicker: "Weather-aware truck routing",
 		summary: "Pick a start, a destination, a departure time and a load weight. Spotter finds up to three routes, works out when the truck reaches each checkpoint, checks the forecast for that place at that hour, and recommends the safest route with a one-sentence reason.",
@@ -70,6 +71,7 @@ var PROJECTS = [
 	},
 	{
 		slug: "ciro",
+		meta: "Team project, live demo",
 		name: "CIRO",
 		kicker: "Crisis Intelligence and Response Orchestrator",
 		summary: "A team project for the Innovista Hackathon: a command centre for Islamabad. It takes crisis signals from citizens, weather and traffic feeds, and turns each one into a classified, prioritised response plan.",
@@ -104,6 +106,7 @@ var PROJECTS = [
 	},
 	{
 		slug: "miras",
+		meta: "Team project, live site",
 		name: "Miras",
 		kicker: "Digital archiving and marketplace for cultural artifacts",
 		summary: "A team project: a platform where institutions catalogue cultural artifacts, run virtual exhibitions and events, sell tickets, hold auctions, and record ownership on a blockchain.",
@@ -132,6 +135,7 @@ var PROJECTS = [
 	},
 	{
 		slug: "restoration",
+		meta: "Solo project, live APIs",
 		name: "Digital Artifact Restoration",
 		kicker: "Finding and filling damage in photos of historical artifacts",
 		summary: "A solo project. No labelled damage dataset existed for this, so it starts by building one. Two trained models then locate the damage and reconstruct what's missing, and both run as APIs.",

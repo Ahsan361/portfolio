@@ -43,6 +43,7 @@ export type VisualKind = "spotter" | "pipeline-ciro" | "layers-miras" | "pipelin
 
 export interface Project {
   slug: string;
+  meta: string;
   name: string;
   kicker: string;
   summary: string;
@@ -56,6 +57,7 @@ export interface Project {
 export const PROJECTS: Project[] = [
   {
     slug: "spotter",
+    meta: "Solo project, live demo",
     name: "Spotter",
     kicker: "Weather-aware truck routing",
     summary:
@@ -83,6 +85,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: "ciro",
+    meta: "Team project, live demo",
     name: "CIRO",
     kicker: "Crisis Intelligence and Response Orchestrator",
     summary:
@@ -109,6 +112,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: "miras",
+    meta: "Team project, live site",
     name: "Miras",
     kicker: "Digital archiving and marketplace for cultural artifacts",
     summary:
@@ -135,6 +139,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: "restoration",
+    meta: "Solo project, live APIs",
     name: "Digital Artifact Restoration",
     kicker: "Finding and filling damage in photos of historical artifacts",
     summary:
