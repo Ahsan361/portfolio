@@ -3,7 +3,7 @@ import { a as MIRAS_LAYERS, c as PROFILE, d as RESTORATION_STAGES, i as MIRAS_FE
 import { a as require_jsx_runtime, o as require_react } from "../_libs/@radix-ui/react-collection+[...].mjs";
 import { n as ArrowUpRight, t as Check } from "../_libs/lucide-react.mjs";
 import { i as Trigger, n as List, r as Root2, t as Content } from "../_libs/radix-ui__react-tabs.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-kmqONulz.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-C1J2Srh-.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var RAMP = [
@@ -966,7 +966,7 @@ function Contact() {
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 					className: "mt-8 max-w-[44ch] text-[1.3rem] leading-snug text-ground/90",
-					children: "I’m looking for a junior AI/ML or software role and can start right away. Email is the fastest way to reach me."
+					children: "I’m looking for an AI/ML or software engineering role and can start right away. Email is the fastest way to reach me."
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "mt-10 flex flex-wrap items-center gap-x-6 gap-y-4",

@@ -146,8 +146,8 @@ export function Contact() {
           Hiring for a remote role?
         </RevealHeading>
         <p className="mt-8 max-w-[44ch] text-[1.3rem] leading-snug text-ground/90">
-          I&rsquo;m looking for a junior AI/ML or software role and can start right away. Email is
-          the fastest way to reach me.
+          I&rsquo;m looking for an AI/ML or software engineering role and can start right away.
+          Email is the fastest way to reach me.
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
