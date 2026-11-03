@@ -1,9 +1,11 @@
-import { n as require_jsx_runtime, t as QueryClientProvider } from "../_libs/react+tanstack__react-query.mjs";
+import { c as PROFILE } from "./site-HDdlMug2.mjs";
+import { a as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
 import { c as HeadContent, d as Outlet, f as lazyRouteComponent, g as useRouter, h as Link, m as createRootRouteWithContext, p as createFileRoute, s as Scripts, u as createRouter } from "../_libs/@tanstack/react-router+[...].mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-CQfXtQKv.js
+import { t as QueryClientProvider } from "../_libs/tanstack__react-query.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/router-DYPLxKSX.js
 var import_jsx_runtime = require_jsx_runtime();
-var styles_default = "/assets/styles-CGKKc1zt.css";
+var styles_default = "/assets/styles-t0XFzHjB.css";
 function NotFoundComponent() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 		className: "flex min-h-screen items-center justify-center bg-background px-4",
@@ -77,34 +79,9 @@ var Route$1 = createRootRouteWithContext()({
 				name: "viewport",
 				content: "width=device-width, initial-scale=1"
 			},
-			{ title: "Muhammad Ahsan Aftab | Full Stack AI Engineer" },
-			{
-				name: "description",
-				content: "Full Stack AI Engineer building AI-powered applications, Agentic AI systems, and scalable full-stack products."
-			},
 			{
 				name: "author",
 				content: "Muhammad Ahsan Aftab"
-			},
-			{
-				property: "og:title",
-				content: "Muhammad Ahsan Aftab | Full Stack AI Engineer"
-			},
-			{
-				property: "og:description",
-				content: "Full Stack AI Engineer building AI-powered applications, Agentic AI systems, and scalable full-stack products."
-			},
-			{
-				property: "og:type",
-				content: "website"
-			},
-			{
-				name: "twitter:card",
-				content: "summary_large_image"
-			},
-			{
-				name: "twitter:site",
-				content: "@ahsanaftab"
 			}
 		],
 		links: [{
@@ -133,41 +110,39 @@ function RootComponent() {
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {})
 	});
 }
-var $$splitComponentImporter = () => import("./routes-BPbUtYO3.mjs");
+var $$splitComponentImporter = () => import("./routes-ChDB0T_y.mjs");
+var TITLE = "Muhammad Ahsan Aftab | AI/ML and Full-Stack Engineer";
+var DESCRIPTION = "AI/ML and full-stack engineer building multi-agent crisis response, weather-aware routing and image restoration systems. Based in Pakistan, available for remote roles.";
 var rootRouteChildren = { IndexRoute: createFileRoute("/")({
 	head: () => ({
 		meta: [
-			{ title: "Muhammad Ahsan Aftab — Full Stack AI Engineer" },
+			{ title: TITLE },
 			{
 				name: "description",
-				content: "Full Stack AI Engineer building AI-powered applications, Agentic AI systems, and scalable full-stack products with React, Next.js, Python, and LLMs."
+				content: DESCRIPTION
 			},
 			{
 				property: "og:title",
-				content: "Muhammad Ahsan Aftab — Full Stack AI Engineer"
+				content: TITLE
 			},
 			{
 				property: "og:description",
-				content: "Building AI-powered applications, Agentic AI systems, and scalable full-stack products."
+				content: DESCRIPTION
 			},
 			{
 				property: "og:type",
 				content: "website"
 			},
 			{
-				property: "og:url",
-				content: "/"
+				name: "twitter:card",
+				content: "summary"
 			},
 			{
-				name: "twitter:card",
-				content: "summary_large_image"
+				name: "theme-color",
+				content: "#e9eeec"
 			}
 		],
 		links: [
-			{
-				rel: "canonical",
-				href: "/"
-			},
 			{
 				rel: "preconnect",
 				href: "https://fonts.googleapis.com"
@@ -179,7 +154,7 @@ var rootRouteChildren = { IndexRoute: createFileRoute("/")({
 			},
 			{
 				rel: "stylesheet",
-				href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+				href: "https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..600&display=swap"
 			}
 		],
 		scripts: [{
@@ -187,17 +162,10 @@ var rootRouteChildren = { IndexRoute: createFileRoute("/")({
 			children: JSON.stringify({
 				"@context": "https://schema.org",
 				"@type": "Person",
-				name: "Muhammad Ahsan Aftab",
-				jobTitle: "Full Stack AI Engineer",
-				description: "Full Stack AI Engineer building AI-powered applications, Agentic AI systems, and scalable full-stack products.",
-				knowsAbout: [
-					"Full Stack Development",
-					"Generative AI",
-					"Retrieval Augmented Generation",
-					"Agentic AI",
-					"Deep Learning",
-					"Computer Vision"
-				]
+				name: PROFILE.name,
+				jobTitle: "AI/ML and Full-Stack Engineer",
+				description: DESCRIPTION,
+				sameAs: [PROFILE.github, PROFILE.linkedin]
 			})
 		}]
 	}),
