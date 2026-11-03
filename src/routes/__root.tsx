@@ -73,22 +73,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Muhammad Ahsan Aftab | Full Stack AI Engineer" },
-      {
-        name: "description",
-        content:
-          "Full Stack AI Engineer building AI-powered applications, Agentic AI systems, and scalable full-stack products.",
-      },
       { name: "author", content: "Muhammad Ahsan Aftab" },
-      { property: "og:title", content: "Muhammad Ahsan Aftab | Full Stack AI Engineer" },
-      {
-        property: "og:description",
-        content:
-          "Full Stack AI Engineer building AI-powered applications, Agentic AI systems, and scalable full-stack products.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@ahsanaftab" },
     ],
     links: [
       {
